@@ -1,6 +1,20 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import '@/shared/styles/index.scss'
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+import { AppLayoutProps } from 'next/app'
+import Head from 'next/head'
+import { Fragment } from 'react'
+
+
+const _APP = ({ Component, pageProps }: AppLayoutProps) => {
+  return (
+    <Fragment>
+      <Head>
+        <link rel="icon" type="image/ico" href="/favicon.png"></link>
+        <meta name="robots" content="index, follow" />
+      </Head>
+      <Component {...pageProps} />
+    </Fragment>
+  )
 }
+
+export default _APP
