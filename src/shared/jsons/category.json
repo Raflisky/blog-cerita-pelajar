@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "image": "/static/images/category/teknologi.svg",
+        "name": "Teknologi",
+        "link": "/"
+    },
+    {
+        "id": 2,
+        "image": "/static/images/category/esport.svg",
+        "name": "Esport",
+        "link": "/"
+    },
+    {
+        "id": 3,
+        "image": "/static/images/category/sport.svg",
+        "name": "Sport",
+        "link": "/"
+    },
+    {
+        "id": 4,
+        "image": "/static/images/category/wisata.svg",
+        "name": "Wisata",
+        "link": "/"
+    },
+    {
+        "id": 5,
+        "image": "/static/images/category/kuliner.svg",
+        "name": "Kuliner",
+        "link": "/"
+    },
+    {
+        "id": 6,
+        "image": "/static/images/category/kriminal.svg",
+        "name": "Kriminal",
+        "link": "/"
+    }
+]

@@ -5,7 +5,7 @@
 //   src: url('../fonts/Helvetica/Helvetica-Light.otf');
 //   font-weight: 300;
 // }
-
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 // h1,
 // h2,
 // h3,
@@ -17,7 +17,7 @@
 // strong {
 //   @apply font-black font-display;
 // }
-// html,
-// body {
-//   @apply font-body;
-// }
+html,
+body {
+  @apply font-main;
+}

@@ -10,6 +10,7 @@ type ExtraSizes = 'xl' | '2xl' | '3xl' | 'full'
 interface DefaultButtonProps {
     text?: string | ReactNode
     variant?: Variants
+    icon?: ReactNode
     url?: string
     size?: Sizes
     rounded?: Sizes | ExtraSizes
@@ -36,6 +37,7 @@ export const Loading: FC = () => (
 const Button: FC<DefaultButtonProps> = ({
     text,
     variant = 'primary',
+    icon,
     url,
     size = 'md',
     rounded = 'full',
@@ -52,13 +54,13 @@ const Button: FC<DefaultButtonProps> = ({
     const classNames = [`rounded-${rounded}`]
     switch (variant) {
         case 'primary':
-            classNames.push('text-white bg-primary')
+            classNames.push('text-black bg-primary')
             break
         case 'secondary':
             classNames.push('text-white bg-secondary')
             break
         case 'outline':
-            classNames.push('text-primary border-primary border')
+            classNames.push('border rounded-md')
             break
         case 'gray':
             classNames.push('text-white border-gray-300 bg-gray-300')
@@ -106,7 +108,10 @@ const Button: FC<DefaultButtonProps> = ({
                             <span>{content}</span>
                         </div>
                     ) : (
-                        content
+                        <div className={`${icon && 'space-x-2'} flex items-center space-x-2`}>
+                            <p>{content}</p>
+                            <p>{icon}</p>
+                        </div>
                     )}
                 </button>
             </a>
@@ -122,7 +127,10 @@ const Button: FC<DefaultButtonProps> = ({
                         <span>{content}</span>
                     </div>
                 ) : (
-                    content
+                    <div className={`${icon && 'space-x-2'} flex items-center space-x-2`}>
+                        <p>{content}</p>
+                        <p>{icon}</p>
+                    </div>
                 )}
             </Link>
         )
@@ -140,7 +148,10 @@ const Button: FC<DefaultButtonProps> = ({
                     <span>{content}</span>
                 </div>
             ) : (
-                content
+                <div className={`${icon && 'space-x-2'} flex items-center space-x-2`}>
+                    <p>{content}</p>
+                    <p>{icon}</p>
+                </div>
             )}
         </button>
     )

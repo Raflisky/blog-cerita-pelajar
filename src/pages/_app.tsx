@@ -1,8 +1,9 @@
-import '@/shared/styles/index.scss'
-
-import { AppLayoutProps } from 'next/app'
-import Head from 'next/head'
 import { Fragment } from 'react'
+import Head from 'next/head'
+
+import '@/shared/styles/index.scss'
+import { AppLayoutProps } from 'next/app'
+import { AppLayout } from '@/components/Layout/App'
 
 
 const _APP = ({ Component, pageProps }: AppLayoutProps) => {
@@ -12,7 +13,9 @@ const _APP = ({ Component, pageProps }: AppLayoutProps) => {
         <link rel="icon" type="image/ico" href="/favicon.png"></link>
         <meta name="robots" content="index, follow" />
       </Head>
-      <Component {...pageProps} />
+      <AppLayout>
+        <Component {...pageProps} />
+      </AppLayout>
     </Fragment>
   )
 }
