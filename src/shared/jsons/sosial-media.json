@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Facebook",
+        "image": "/static/icons/sosmed/facebook.svg",
+        "link": "https://www.facebook.com/"
+    },
+    {
+        "name": "Instagram",
+        "image": "/static/icons/sosmed/instagram.svg",
+        "link": "https://www.instagram.com/"
+    },
+    {
+        "name": "Whatsapp",
+        "image": "/static/icons/sosmed/whatsapp.svg",
+        "link": "https://wa.wizard.id/8017d7"
+    },
+    {
+        "name": "Twitter",
+        "image": "/static/icons/sosmed/twitter.svg",
+        "link": "https://twitter.com/"
+    }
+]

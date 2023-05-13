@@ -1,7 +1,9 @@
 import React, { useState, FC } from 'react'
 import Link from 'next/link';
 import { BiSearch } from "react-icons/bi"
+import { RiArrowDownSLine } from "react-icons/ri"
 
+import data from "@/shared/jsons/category.json"
 import Button from '../Button';
 
 interface ScrolledProps {
@@ -10,6 +12,7 @@ interface ScrolledProps {
 
 export const NavMenu: FC<ScrolledProps> = ({ navScroll }) => {
     const [search, setSearch] = useState(false)
+    const [category, setCategory] = useState(false)
 
     return (
         <nav className='flex items-center'>
@@ -19,24 +22,30 @@ export const NavMenu: FC<ScrolledProps> = ({ navScroll }) => {
             </div>
             <ul className={`flex items-center ml-10 space-x-10 text-sm font-semibold tracking-wider transition-all ${navScroll ? 'text-black' : 'text-white'}`}>
 
-                <li>
+                <li className='hover:text-primary'>
                     <Link href="/">
                         Beranda
                     </Link>
                 </li>
-                <li>
+                <li className='hover:text-primary'>
                     <Link href="/">
                         Article
                     </Link>
                 </li>
-                <li>
-                    <Link href="/">
-                        Kategori
-                    </Link>
+                <li className='relative flex items-center hover:text-primary'>
+                    <p>Kategori</p>
+                    <RiArrowDownSLine onClick={() => setCategory(!category)} size={25} className={`${category ? 'rotate-180' : 'rotate-0'} transition-all`} />
+                    <ul className={`${category ? 'absolute bg-white shadow-lg border rounded-2xl -left-1 grid grid-cols-2 gap-5 -bottom-40 p-4 h-[150px] w-[180px]' : 'hidden'}`}>
+                        {data.map((item, index) => (
+                            <li key={index} onClick={() => setCategory(false)} className='text-black transition-all hover:text-primary'>
+                                <Link scroll={false} href={item.link}>{item.name}</Link>
+                            </li>
+                        ))}
+                    </ul>
                 </li>
-                <li>
+                <li className='hover:text-primary'>
                     <Link href="/">
-                        Kontak
+                        Tentang Kami
                     </Link>
                 </li>
             </ul>
